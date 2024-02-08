@@ -132,7 +132,7 @@ const Listing = () => {
                   Contact Landlord
                 </button>
               )}
-            {contact && <Contact listing={listing} />}
+            {contact && <Contact />}
           </div>
         </div>
       )}

@@ -3,6 +3,8 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Loader from "../components/Loader";
 import { motion as m } from "framer-motion";
+import imgLoad from "../assets/imgLoad.gif";
+
 import "../styles/showlisting.css";
 import { containerVariants } from "../motion/motionStyles";
 const ShowListing = () => {
@@ -11,7 +13,14 @@ const ShowListing = () => {
   const [loading, setLoading] = useState(false);
   const [loadingTwo, setLoadingTwo] = useState(false);
   const { currentUser } = useSelector((state) => state.user);
+  const [loading_img, setLoading_img] = useState(false);
 
+  useEffect(() => {
+    setLoading_img(true);
+    setTimeout(() => {
+      setLoading_img(false);
+    }, [1000]);
+  }, []);
   useEffect(() => {
     const handleShowListings = async () => {
       setLoading(true);
@@ -54,6 +63,7 @@ const ShowListing = () => {
       console.log(error.message);
     }
   };
+
   return (
     <m.div
       style={{ color: "black" }}
@@ -79,12 +89,15 @@ const ShowListing = () => {
                       <div className="showlisting-img-name-wrap">
                         <Link to={`/listing/${listing._id}`}>
                           <img
-                            src={listing.imageUrls[0]}
+                            src={loading_img ? imgLoad : listing.imageUrls[0]}
                             alt="listing cover"
                             className="showlisting-img"
                           />
                         </Link>
-                        <Link to={`/listing/${listing._id}`} className="show-listing-name-link">
+                        <Link
+                          to={`/listing/${listing._id}`}
+                          className="show-listing-name-link"
+                        >
                           <p className="showlisting-name">{listing.name}</p>
                         </Link>
                       </div>

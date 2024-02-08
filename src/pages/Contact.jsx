@@ -3,12 +3,13 @@ import emailjs from "@emailjs/browser";
 import toast from "react-hot-toast";
 import "../styles/contact.css";
 
-const Contact = ({ listing }) => {
+const Contact = () => {
+  const [loading, setLoading] = useState(false);
   const form = useRef();
 
   const sendEmail = (e) => {
     e.preventDefault();
-
+    setLoading(true);
     emailjs
       .sendForm("service_kfstvlk", "template_rw2zp9c", form.current, {
         publicKey: "PkNDvuQ7XFSuWl7-2",
@@ -23,6 +24,7 @@ const Contact = ({ listing }) => {
               color: "#fff",
             },
           });
+          setLoading(false);
         },
         (error) => {
           console.log("FAILED...", error.text);
@@ -35,7 +37,12 @@ const Contact = ({ listing }) => {
   return (
     <div className="contact-main">
       <form onSubmit={sendEmail} ref={form}>
-        <input type="email" placeholder="email" name="user_email" className="contact-inp"/>
+        <input
+          type="email"
+          placeholder="email"
+          name="user_email"
+          className="contact-inp"
+        />
         <textarea
           name="message"
           id=""
@@ -44,8 +51,8 @@ const Contact = ({ listing }) => {
           className="contact-textarea"
           placeholder="Enter message"
         ></textarea>
-        <button className="contact-bt" type="submit">
-          Send
+        <button className="contact-bt" type="submit" disabled={loading}>
+          {loading ? "PROCESSING" : "SEND"}
         </button>
       </form>
     </div>

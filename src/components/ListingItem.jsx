@@ -1,8 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { MdLocationOn } from "react-icons/md";
+import imgLoad from "../assets/imgLoad.gif";
 import "../styles/listing-item.css";
+
 const ListingItem = ({ listing }) => {
+  const [loading, setLoading] = useState(false);
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, [3000]);
+  }, []);
+
   return (
     <div className="listing-item-container">
       <Link to={`/listing/${listing._id}`} className="listing-item-link">
@@ -10,10 +20,13 @@ const ListingItem = ({ listing }) => {
           <img
             className="listing-item-image"
             src={
-              listing.imageUrls[0] ||
-              "https://53.fs1.hubspotusercontent-na1.net/hub/53/hubfs/Sales_Blog/real-estate-business-compressor.jpg?width=595&height=400&name=real-estate-business-compressor.jpg"
+              loading
+                ? imgLoad
+                : listing.imageUrls[0] ||
+                  "https://53.fs1.hubspotusercontent-na1.net/hub/53/hubfs/Sales_Blog/real-estate-business-compressor.jpg?width=595&height=400&name=real-estate-business-compressor.jpg"
             }
             alt="listing cover"
+            // loading="lazy"
           />
         </div>
         <div className="listing-item-text-div">

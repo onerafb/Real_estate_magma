@@ -46,7 +46,7 @@ const Home = () => {
             </p>
             <p className="p-two-home">End your long search {"(DTT®)"}</p>
             <Link to="/about">
-              <button>LEARN MORE</button>
+              <button style={{whiteSpace:"nowrap"}}>LEARN MORE</button>
             </Link>
           </div>
         </m.div>
