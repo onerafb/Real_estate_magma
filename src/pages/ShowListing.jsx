@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 import Loader from "../components/Loader";
 import { motion as m } from "framer-motion";
 import imgLoad from "../assets/imgLoad.gif";
-
 import "../styles/showlisting.css";
 import { containerVariants } from "../motion/motionStyles";
+
 const ShowListing = () => {
   const [showListingsError, setShowListingsError] = useState(false);
   const [userListings, setUserListings] = useState([]);
@@ -38,6 +38,7 @@ const ShowListing = () => {
         setTimeout(() => {
           setLoadingTwo(false);
         }, [4000]);
+        // console.log(userListings.length);
       } catch (error) {
         setShowListingsError(true);
       }
