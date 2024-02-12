@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 import Home from "./pages/Home";
@@ -18,6 +18,7 @@ import "./styles/locomotive-scroll.css";
 // import 'locomotive-scroll/dist/locomotive-scroll.css'
 
 const App = () => {
+
   return (
     <>
       <BrowserRouter>
