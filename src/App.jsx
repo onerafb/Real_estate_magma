@@ -15,9 +15,22 @@ import Search from "./pages/Search";
 import HomeTwo from "./pages/HomeTwo";
 import ShowListing from "./pages/ShowListing";
 import "./styles/locomotive-scroll.css";
+
+// import Cookies from "universal-cookie";
+// import { useSelector, useDispatch } from "react-redux";
+// import { signOutUserSuccess } from "./redux/user/userSlice";
 // import 'locomotive-scroll/dist/locomotive-scroll.css'
 
 const App = () => {
+  // const dispatch = useDispatch();
+
+  // useEffect(() => {
+  //   const cookies = new Cookies();
+  //   const myCookie = cookies.get("access");
+  //   if (myCookie && new Date(myCookie.expires) < new Date()) {
+  //     dispatch(signOutUserSuccess());
+  //   }
+  // }, [dispatch]);
 
   return (
     <>

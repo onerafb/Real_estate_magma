@@ -65,7 +65,7 @@ const UpdateListing = () => {
   };
 
   const handleImageSubmit = (e) => {
-    if (files.length > 0 && files.length + formData.imageUrls.length < 7) {
+    if (files.length > 0 && files.length + formData.imageUrls.length < 6) {
       setUploading(true);
       setImageUploadError(false);
       const promises = [];
@@ -87,7 +87,7 @@ const UpdateListing = () => {
           setUploading(false);
         });
     } else {
-      setImageUploadError("You can only upload 6 images per listing");
+      setImageUploadError("You can only upload 5 images per listing");
       setUploading(false);
     }
   };

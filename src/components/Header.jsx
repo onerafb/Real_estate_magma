@@ -35,7 +35,7 @@ const Header = () => {
       <div className="header-div">
         <div className="header-div-childOne">
           <Link to="/" className="header-link">
-            <h2 className="logo">Logo</h2>
+            <span className="header-logo-img">❄️URBAN-NEST</span>
           </Link>
           <form className="header-input" onSubmit={handleSubmit}>
             <input
@@ -57,6 +57,11 @@ const Header = () => {
             <li onClick={handleToggle}>
               <Link to="/about" className="header-link">
                 About
+              </Link>
+            </li>
+            <li onClick={handleToggle}>
+              <Link to="/home" className="header-link">
+                Inventory
               </Link>
             </li>
             <li onClick={handleToggle}>

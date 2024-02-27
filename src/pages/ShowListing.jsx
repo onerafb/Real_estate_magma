@@ -21,6 +21,7 @@ const ShowListing = () => {
       setLoading_img(false);
     }, [1000]);
   }, []);
+  
   useEffect(() => {
     const handleShowListings = async () => {
       setLoading(true);

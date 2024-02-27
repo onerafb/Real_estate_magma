@@ -33,6 +33,7 @@ const CreateListing = () => {
     parking: false,
     furnished: false,
   });
+  //need to add -->city
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
@@ -64,7 +65,7 @@ const CreateListing = () => {
   };
 
   const handleImageSubmit = (e) => {
-    if (files.length > 0 && files.length + formData.imageUrls.length < 7) {
+    if (files.length > 0 && files.length + formData.imageUrls.length < 6) {
       setUploading(true);
       setImageUploadError(false);
       const promises = [];
@@ -86,7 +87,7 @@ const CreateListing = () => {
           setUploading(false);
         });
     } else {
-      setImageUploadError("Can only upload 1 or 6 images ");
+      setImageUploadError("Can only upload 1 or 5 images ");
       setUploading(false);
     }
   };
@@ -136,6 +137,9 @@ const CreateListing = () => {
         return setError("Discount price must be lower than regular price");
       setLoading(true);
       setError(false);
+
+      console.log(formData);
+
       const res = await fetch("/api/listing/create", {
         method: "POST",
         headers: {

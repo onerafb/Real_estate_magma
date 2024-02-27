@@ -116,62 +116,6 @@ svg {
   }
 }
 
-/* input {
-  margin: 10px;
-  width: 15rem;
-  padding: 11px 5px;
-  border-radius: 2px;
-  border: none;
-  outline: 1px solid navy;
-  font-family: "Quicksand";
-  font-weight: 600;
-}
-
-input::placeholder {
-  font-size: 16px;
-}
-
-input:focus {
-  box-shadow: 4px 4px rgb(21, 21, 21);
-}
-
-@media (max-width: 608px) {
-  input {
-    width: 13rem;
-    padding: 7px 3px;
-  }
-  input::placeholder {
-    font-size: 14px;
-  }
-}
-
-.input-100 {
-  margin: 10px;
-  width: 100%;
-  padding: 11px 5px;
-  border-radius: 2px;
-  border: none;
-  outline: 1px solid navy;
-  font-family: "Quicksand";
-  font-weight: 600;
-}
-
-.input-100::placeholder {
-  font-size: 16px;
-}
-
-.input-100:focus {
-  box-shadow: 4px 4px rgb(21, 21, 21);
-}
-
-@media (max-width: 608px) {
-  .input-100 {
-    padding: 7px 3px;
-  }
-  .input-100::placeholder {
-    font-size: 14px;
-  }
-} */
 @media (min-width: 50em) {
   /* Greater than 800px */
   .even-columns {

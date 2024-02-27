@@ -3,9 +3,9 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion as m } from "framer-motion";
 import ListingItem from "../components/ListingItem";
-
-import "../styles/search.css";
 import { containerVariants } from "../motion/motionStyles";
+import "../styles/search.css";
+
 const Search = () => {
   const navigate = useNavigate();
   const [sidebardata, setSidebardata] = useState({

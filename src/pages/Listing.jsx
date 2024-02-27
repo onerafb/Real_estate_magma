@@ -50,6 +50,7 @@ const Listing = () => {
     };
     fetchListing();
   }, [params.listingId]);
+  console.log(listing);
   return (
     <m.main
       className="listing-container"
@@ -61,21 +62,41 @@ const Listing = () => {
       {error && <p>Something went wrong</p>}
       {listing && !loading && !error && (
         <div className="listing-container-inner">
-          <div>
-            <Swiper navigation={true} pagination={true}>
-              {listing.imageUrls.map((url) => (
-                <SwiperSlide key={url}>
-                  <div
-                    className="listing-image-div"
-                    style={{
-                      background: `url(${url}) center no-repeat `,
-                      backgroundSize: "contain",
-                    }}
-                  ></div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
+          {/* //!work */}
+          <div className="l-grid-wrap">
+            <div className="l-div-one">
+              {listing.imageUrls[0] && (
+                <img src={listing.imageUrls[0]} alt="" className="l-ch-img" />
+              )}
+              <p className="no-image-l">NO IMAGE YET</p>
+            </div>
+            <div className="l-div-two">
+              {listing.imageUrls[1] && (
+                <img src={listing.imageUrls[1]} alt="" className="l-ch-img" />
+              )}
+              <p className="no-image-l">NO IMAGE YET</p>
+            </div>
+            <div className="l-div-three">
+              {listing.imageUrls[2] && (
+                <img src={listing.imageUrls[2]} alt="" className="l-ch-img" />
+              )}
+              <p className="no-image-l">NO IMAGE YET</p>
+            </div>
+            <div className="l-div-four">
+              {listing.imageUrls[3] && (
+                <img src={listing.imageUrls[3]} alt="" className="l-ch-img" />
+              )}
+              <p className="no-image-l">NO IMAGE YET</p>
+            </div>
+            <div className="l-div-five">
+              {listing.imageUrls[4] && (
+                <img src={listing.imageUrls[4]} alt="" className="l-ch-img" />
+              )}
+              <p className="no-image-l">NO IMAGE YET</p>
+            </div>
           </div>
+
+          {/* //!work */}
           <div className="listing-text">
             <p className="listingg-name">
               {listing.name} - Rs{" "}
@@ -85,10 +106,7 @@ const Listing = () => {
               {listing.type === "rent" && " / month"}
             </p>
             <p className="listing-address">
-              <span>
-                <FaMapMarkerAlt />
-              </span>
-              <span>{listing.address}</span>
+              <span> ADDRESS - {listing.address}</span>
             </p>
             <div className="listing-bt">
               <p>{listing.type === "rent" ? "For Rent" : "For Sale"}</p>
